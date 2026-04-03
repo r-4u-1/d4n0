@@ -1,0 +1,145 @@
+import type { Project, GalleryItem, Award, NavLink } from '@/types'
+
+export const NAV_LINKS: NavLink[] = [
+  { label: 'Home',     href: '#hero' },
+  { label: 'About',    href: '#about' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Gallery',  href: '#gallery' },
+  { label: 'Contact',  href: '#contact' },
+]
+
+export const PROJECTS: Project[] = [
+  {
+    id: 'echoes-of-light',
+    title: 'Echoes of Light',
+    year: 2024,
+    category: 'Narrative',
+    role: 'Director · Editor',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBqthf0BzwHmlie2hD_0UnbFlu8OkTqNteKN2osCgGjLaLkxEkJZD8kncnybyZrWBoLlK40G3yi8-EvoZQXEubIX1u3C3vXCI8CkQonNo2kClRoRTodvlJIo7giFek4SQmCjQoVFMuLWeR4cnuOqPTwWiU44L1OlOLYUPDqXrOpzAuhGTOrFgnknVkwpEa-G1UGXPhSjXCbUzAuvP7m6JU9a4Soor-D6DSmCZMJKuTDNfAbh-RLar9SzPdqTpDNvjw6w7J4oydthK9J',
+    imageAlt: 'Cinematic still of a woman standing in a neon-lit futuristic corridor with purple and green lighting',
+    color: '#00FFB2',
+  },
+  {
+    id: 'meridian',
+    title: 'Meridian',
+    year: 2022,
+    category: 'Feature',
+    role: 'Director · Co-writer',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBAh5fklqMIXNNJmlJvzc1Zme9hfTrRJbcT0fIWvirPqsj-l-NB1VGsQNY31rnyrrAwigr_O5DLUL_IoVPfhVbQE_INCErAkfj1pCyrD_SjYJNWQv6PbEfqmt1nBMsa531IrFmy47Vn6JgumBKh76_JD9EuuMDJMDX4Z9BvCVoYlq7hORmfZ10ROFn167p_p9OqV-KEgsQwjH3FifT3HceW2MtfrIpY6s_ESLvxKniY4g1eWpTYc5_N6kfv5P1qlnyJSOMZZnQ8xzlH',
+    imageAlt: 'Vast desert landscape at sunset with a mirrored monolith reflecting the orange sky',
+    color: '#BF5FFF',
+  },
+  {
+    id: 'volta-school-docs',
+    title: 'Volta School Docs',
+    year: 2024,
+    category: 'Education',
+    role: 'Director · Producer',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAE1l0Vsa_chDDxg_g1hvJYRqwCtOu24VKmC9ObcoP_tkMofTmpsg7W_AFq_PDR1-bEmHd2uzF5rX4JYkwsZkq7StOYVDKIbIOe9uaqd3QK-71n1RyVmnf6lHgcvmG_-XosDJJEZrdqpCuODquLhUx8iU95_B_qUmNo7UH41ooeC4oJ1_oF26whdtugYnnoJ3r4nFQJgumseTJ-_yJ72OhKBP1l9kZyxMWd63Cj2GogygQ-nUCWuuwGT4kxJHryi1T5MjhvRqY1YcID',
+    imageAlt: 'Close up of raindrops on a glass window with blurry city lights in the background',
+    color: '#FF6B8A',
+  },
+  {
+    id: 'the-quiet-hours',
+    title: 'The Quiet Hours',
+    year: 2023,
+    category: 'Short',
+    role: 'Director · DP',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDBZhXRx4klEkwrhVIxMJ4V_vMN5wNvk1WfTKB_kWgiLA3saxLaz5C-TnjwB1h9tDs-5s6zWaEJS4k1tcATGHSm492mH7i7YNkx4vOxCYcUiE32SB48KVFV08gCag6Ob292oculDZgYk32fArL2Wzb6NzsxhpdzMxfZKw_ikcidf4am6VTYJewMsHx8KEy5AyryIXQnG3rcBTre6M_-cWpzlHTeZytxRQjv0PqE7-ikeJGPt1Mz58Jt8LRBm5R5E4iy0HEE2yAv1El8',
+    imageAlt: 'Man sitting in a dim jazz club silhouette against a smoky stage light',
+    color: '#00FFB2',
+  },
+  {
+    id: 'terra-brand-film',
+    title: 'Terra Brand Film',
+    year: 2021,
+    category: 'Corporate',
+    role: 'Director',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBWrkr4_YK_fLH-268tcr0Emk_9DY9wFnYAdICupWc2jlvc8EtL20qSV3gRuyAhCpiG4LP6uHH6istTF1--b4VDnQXX1LAEg3Yg08Ye44tKO0g_UIytuNYxaM0AX9WLWtMNTESfEqURjNKKmrXVqDTn6KtDPYk4XENp7Wa4ax4kIj63zI0xA0MbQOv_vshZZuz_B2e1_JBFpEGsOd7ul6_ZAfWxCLSRi8oq1_5atu1PQ0cPwNmnEi8Exv1f6HUzOCQTWU_Xb9Wgy6hE',
+    imageAlt: 'Industrial warehouse interior with shafts of morning light cutting through dust',
+    color: '#BF5FFF',
+  },
+  {
+    id: 'depth-of-field',
+    title: 'Depth of Field',
+    year: 2019,
+    category: 'Narrative',
+    role: 'Director · Writer',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA0iznRfeNz1EmgA_ABagLhb-_Jmg0B3G04rxaTcgzjOCf_ck3snHZD8kncnybyZrWBoLlK40G3yi8-EvoZQXEubIX1u3C3vXCI8CkQonNo2kClRoRTodvlJIo7giFek4SQmCjQoVFMuLWeR4cnuOqPTwWiU44L1OlOLYUPDqXrOpzAuhGTOrFgnknVkwpEa-G1UGXPhSjXCbUzAuvP7m6JU9a4Soor-D6DSmCZMJKuTDNfAbh-RLar9SzPdqTpDNvjw6w7J4oydthK9J',
+    imageAlt: 'Underwater shot of a swimmer floating in deep blue water with ethereal light beams',
+    color: '#FF6B8A',
+  },
+]
+
+export const GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: 'g1',
+    title: 'Echoes of Light — Act II',
+    category: 'Narrative',
+    type: 'photo',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD7uTh6g54hJZgMp3AgaxN_N5eZTwwoSSkrd7HDuVnWBzjG0siaCCvKgwXwvoN2uXX0y3xAw7-xhX1Zl22vWmdhtZ4R5n-k4DAaxkzvRaVCiKybCJB09cnjvpJt8U2qzNvbSrIpBM7OReWVK-Ns0EYaUSH2Z65NlNLj1aTcK54O7jYFqPg3roIzY2203JOQvSzbTNjlkopG8LSIE3VpMX5uOU8eyKtoOTQJCqmmPcPaxQt8NfOUYggqhAsTCEEpvJU90LfhcUYoas8-',
+    imageAlt: 'Wide cinematic shot of a snowy mountain range under a blood red moon',
+    span: 'wide',
+  },
+  {
+    id: 'g2',
+    title: 'Editorial Series 01',
+    category: 'BTS',
+    type: 'photo',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCOHn2SuWLf66Y6Ca8XMJG0zvglLRG2thS8-Es_WrAI_CHi-Att15NZ7haKM9rOAscxTmbTCI3WQ1BKHYWDkraeAfBdsp8j1wPU0S__OlB5wv8EB4kRq1o17Ag9UGeXESqb9Q005NfapWlJeSgz9S82Ac-nBtaRulmZTO_wj_1N-X_Mix9YQdyJDpC-n0uJ9YyO1AYJNTBRhBRdr5cQtuz20HyrqzDf0glNsC-SdDOIwiw2CtPkUK6LT5gtr5svIKGKrruwC0-AAoAu',
+    imageAlt: 'Vertical editorial shot of a filmmaker in a dark forest with dramatic lighting',
+    span: 'tall',
+  },
+  {
+    id: 'g3',
+    title: 'On Set — Meridian 2022',
+    category: 'BTS',
+    type: 'photo',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBR8e52EYV-FZA1oGQKpW0zHwdgvdyHWTLefdItGVvaROu8gei15EBQKP04fSBKGrMrnVq4V7Fhx6OPhcCQZ5xYEr0OLG3Fjo9tywbnzpe9v_tB9xr9jotxV7ejlUSUXQajVEfF6ZCopGLLP_l_1U6Lgpc4h9tx0PqEU0hJrcn58iiv7NfRptaFvO75CWn4djIq_M_Mm2lL9I7zsaeGlk6is0AI-wLo8GJaHiBkvVd5dlRqyBlIBHSmVkpb7a6THBoAk-ArrgnBa_So',
+    imageAlt: 'Close up of a hand holding a flickering match in pitch blackness',
+    span: 'normal',
+  },
+  {
+    id: 'g4',
+    title: 'Terra Brand — Director\'s Cut',
+    category: 'Commercial',
+    type: 'video',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD_AhpkOGYqOiZQtyx0nQcA5jqniQKZNaqHQOcx_eARStYcz3mwEKYkKXQ9smL-qUj8udiR_jF8NF8HIPVBYALnxQajIZEr4OdinasAty_2g90YkVBLiPncaxtF6z0CSCT-YEWMPIY7Y8U1vp-vPlWvdrlWTcnT-R55YU3-gMTHPfbFOTChhypAeuOSXLiGjk9xWtmE8FpZE6mida1x9zUwVgQ9IXEChR9jb5JAU1EhJsXVMHFwA6E7RQyTrSxJ1w0ysqo15Ey-F24s',
+    imageAlt: 'Blurred motion shot of tail lights in a busy city tunnel at night',
+    span: 'normal',
+  },
+  {
+    id: 'g5',
+    title: 'Volta School Docs — Workshop',
+    category: 'School',
+    type: 'video',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBZEuqSmU7a-nKBkID4nVCqm8kn9vqTCoUJtZEwqf7x00rbfocpHLT31msOWn3tW8ST5Mguwr8wZQAgxJISCJy6Ea3_Z2QO1Dxh4hUXX_rqzeVpQApFFWNBnd9Gx60bzGCUO8YOyzLr_9h2Qxrdaoqfwtc4iNb8X-aqSiO7kEe_-xVrGq-X6FJKNE_FRSr00aIwQ_sFbgpmo4UeFman-QlxgNFo28XHQmG8CWjnGpraPcoMta1o6R6XSWsSLPJir6Vnx5e_q1Yn9aAi',
+    imageAlt: 'Behind the scenes shot of a film set with a large boom mic and director pointing',
+    span: 'wide',
+  },
+  {
+    id: 'g6',
+    title: 'Casting Series 03',
+    category: 'Narrative',
+    type: 'photo',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBJMx7WSe1czuW_r8Jjv2PjVXTCVqCzPIGQEK-EkhCyNII0pbAJ1tRf-yBi9moxctbJevME-CjEiXzwlzOrFlxXUB_X_wbUSHD4rTKXg0gteR0mFjk2mgWX66eCJ6ljnE3_7ws0EPs8YwHSKRhiokNwR3h80l9LFMtEnEF-j2-Cbe9RcoHpAPZLEb5AmDDpTWCbIv7EHMxATRlZ5Avipy0uJtO7v_GOvUCFIxLkL0-xdmbohblD10SwU44FQhdU0btVfbl05j_OxE7C',
+    imageAlt: 'Striking portrait of a filmmaker with dramatic side lighting',
+    span: 'normal',
+  },
+]
+
+export const AWARDS: Award[] = [
+  { id: 'sundance', name: 'Official Selection', festival: 'Sundance Film Festival', year: 2023 },
+  { id: 'biff',     name: 'Best Short Film',    festival: 'BIFF',                    year: 2023 },
+  { id: 'cannes',   name: 'Nomination',          festival: 'Cannes Film Festival',    year: 2024 },
+  { id: 'goteborg', name: 'Grand Prize',         festival: 'Göteborg Film Festival',  year: 2022 },
+  { id: 'diff',     name: 'Jury Award',          festival: 'DIFF',                    year: 2024 },
+]
+
+export const REEL_ITEMS = [
+  { title: 'Echoes of Light', year: 2024, type: 'Narrative' },
+  { title: 'The Quiet Hours', year: 2023, type: 'Short Film' },
+  { title: 'Volta School Docs', year: 2024, type: 'Education' },
+  { title: 'Meridian', year: 2022, type: 'Feature' },
+  { title: 'Terra Brand Film', year: 2021, type: 'Corporate' },
+]

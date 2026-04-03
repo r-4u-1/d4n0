@@ -1,0 +1,161 @@
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem clamp(1.5rem, 5vw, 4rem);
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.panels {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  opacity: 0.45;
+}
+
+.panel {
+  overflow: hidden;
+}
+
+.panelImg {
+  width: 100%;
+  height: 115%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--bg) 95%, transparent) 0%,
+    color-mix(in srgb, var(--bg) 40%, transparent) 55%,
+    color-mix(in srgb, var(--bg) 10%, transparent) 100%
+  );
+  transition: background var(--transition-theme);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--mint);
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 12vw, 9rem);
+  letter-spacing: 0.03em;
+  line-height: 0.88;
+  color: var(--text);
+  margin-bottom: 1rem;
+  transition: color var(--transition-theme);
+}
+
+.titleAccent {
+  color: var(--text);
+  -webkit-text-stroke: 1.5px var(--text);
+  color: transparent;
+}
+
+.tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+  font-weight: 300;
+  color: var(--violet);
+  margin-bottom: 1.25rem;
+  transition: color var(--transition-theme);
+}
+
+.desc {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 420px;
+  margin-bottom: 2rem;
+  transition: color var(--transition-theme);
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--mint);
+  color: #0A0A0F;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.ctaPrimary:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+.ctaGhost {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 0.5px solid var(--border-md);
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  padding: 14px 24px;
+  cursor: pointer;
+  transition: border-color var(--transition-base), color var(--transition-base), transform var(--transition-base);
+}
+
+.ctaGhost:hover {
+  border-color: var(--coral);
+  color: var(--coral);
+  transform: translateY(-2px);
+}
+
+.scrollIndicator {
+  position: absolute;
+  right: clamp(1.5rem, 4vw, 3rem);
+  bottom: 2.5rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.scrollLine {
+  width: 0.5px;
+  height: 52px;
+  background: linear-gradient(to bottom, transparent, var(--mint));
+}
+
+.scrollLabel {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  writing-mode: vertical-rl;
+}
