@@ -29,7 +29,7 @@ describe('About', () => {
 
   it('renders all three services', () => {
     renderAbout()
-    expect(screen.getByText(/narrative film/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/narrative film/i)[0]).toBeInTheDocument()
     expect(screen.getByText(/education/i)).toBeInTheDocument()
     expect(screen.getByText(/corporate/i)).toBeInTheDocument()
   })

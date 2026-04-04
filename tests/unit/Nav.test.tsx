@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import { Nav } from '@/components/Nav/Nav'
 import { ThemeProvider } from '@/context/ThemeContext'
 
@@ -42,12 +42,13 @@ describe('Nav', () => {
     expect(screen.getByRole('button', { name: /open menu/i })).toBeInTheDocument()
   })
 
-  it('opens mobile menu on hamburger click', () => {
+  it('opens mobile menu on hamburger click', async () => {
     renderNav()
-    const hamburger = screen.getByRole('button', { name: /open menu/i })
-    fireEvent.click(hamburger)
-    expect(hamburger).toHaveAttribute('aria-expanded', 'true')
-    expect(screen.getByRole('dialog')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: /open menu/i }))
+    await waitFor(() => {
+      expect(screen.getByRole('button', { name: /close menu/i })).toHaveAttribute('aria-expanded', 'true')
+      expect(screen.getByRole('dialog')).toBeInTheDocument()
+    })
   })
 
   it('closes mobile menu on second click', () => {

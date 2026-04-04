@@ -3,12 +3,17 @@ import '@testing-library/jest-dom'
 // Mock framer-motion to avoid animation side effects in tests
 jest.mock('framer-motion', () => {
   const actual = jest.requireActual('framer-motion')
+  // Cache components so React sees a stable reference across renders —
+  // without this, the Proxy returns a new function on every access, causing
+  // React to unmount/remount the subtree on every render.
+  const componentCache: Record<string, React.FC> = {}
   return {
     ...actual,
     motion: new Proxy(
       {},
       {
         get: (_target, prop: string) => {
+          if (componentCache[prop]) return componentCache[prop]
           const Component = ({ children, ...props }: React.HTMLAttributes<HTMLElement> & { children?: React.ReactNode }) => {
             const React = require('react')
             // Strip framer motion props
@@ -22,6 +27,7 @@ jest.mock('framer-motion', () => {
             return React.createElement(prop as string, rest, children)
           }
           Component.displayName = `motion.${prop}`
+          componentCache[prop] = Component
           return Component
         },
       }

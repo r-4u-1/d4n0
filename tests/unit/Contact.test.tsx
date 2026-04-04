@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import { render, screen, fireEvent, waitFor, act } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Contact } from '@/components/Contact/Contact'
 import { ThemeProvider } from '@/context/ThemeContext'
@@ -12,6 +12,10 @@ function renderContact() {
 }
 
 describe('Contact', () => {
+  afterEach(() => {
+    jest.useRealTimers()
+  })
+
   it('renders the section heading', () => {
     renderContact()
     expect(screen.getByRole('heading', { name: /let's make something/i })).toBeInTheDocument()
@@ -76,7 +80,9 @@ describe('Contact', () => {
     await userEvent.type(screen.getByLabelText(/^email/i), 'test@example.com')
     await userEvent.type(screen.getByLabelText(/^message/i), 'A valid message here.')
     fireEvent.click(screen.getByRole('button', { name: /send message/i }))
-    expect(screen.getByRole('button', { name: /sending/i })).toBeDisabled()
+    await waitFor(() => {
+      expect(screen.getByRole('button', { name: /sending/i })).toBeDisabled()
+    })
   })
 
   it('has aria-required on required inputs', () => {
