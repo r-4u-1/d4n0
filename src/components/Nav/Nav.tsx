@@ -55,7 +55,7 @@ export function Nav() {
           href="#hero"
           className={styles.logo}
           onClick={e => { e.preventDefault(); handleNavClick('#hero') }}
-          aria-label="Daniel — back to top"
+          aria-label="back to top"
         >
           A · B
         </a>
