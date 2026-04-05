@@ -108,8 +108,8 @@ export function Contact() {
             <address className={styles.details} aria-label="Contact details">
               <div className={styles.detail}>
                 <span className={styles.detailLabel}>Email</span>
-                <a href="mailto:alexandre@noir.studio" className={styles.detailValue}>
-                  alexandre@noir.studio
+                <a href="mailto:Dano@B.studio" className={styles.detailValue}>
+                  Dano@B.studio
                 </a>
               </div>
               <div className={styles.detail}>
@@ -170,7 +170,7 @@ export function Contact() {
                 <span className={styles.successIcon} aria-hidden="true">✓</span>
                 <h3 className={styles.successTitle}>Message sent</h3>
                 <p className={styles.successText}>
-                  Thank you for reaching out. Alexandre will be in touch shortly.
+                  Thank you for reaching out. Dano will be in touch shortly.
                 </p>
               </motion.div>
             ) : (

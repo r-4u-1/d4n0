@@ -57,7 +57,7 @@ export function Nav() {
           onClick={e => { e.preventDefault(); handleNavClick('#hero') }}
           aria-label="Daniel — back to top"
         >
-          A · NOIR
+          A · B
         </a>
 
         {/* Desktop links */}

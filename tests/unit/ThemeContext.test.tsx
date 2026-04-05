@@ -39,11 +39,11 @@ describe('ThemeContext', () => {
   it('persists theme to localStorage', () => {
     render(<ThemeProvider><ThemeConsumer /></ThemeProvider>)
     fireEvent.click(screen.getByRole('button', { name: 'Toggle' }))
-    expect(window.localStorage.getItem('noir-theme')).toBe('light')
+    expect(window.localStorage.getItem('B-theme')).toBe('light')
   })
 
   it('reads theme from localStorage on init', () => {
-    window.localStorage.setItem('noir-theme', 'light')
+    window.localStorage.setItem('B-theme', 'light')
     render(<ThemeProvider><ThemeConsumer /></ThemeProvider>)
     expect(screen.getByTestId('theme')).toHaveTextContent('light')
   })

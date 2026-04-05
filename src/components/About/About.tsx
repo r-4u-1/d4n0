@@ -80,7 +80,7 @@ export function About() {
             </motion.p>
 
             <motion.p className={styles.bio} variants={fadeUp}>
-              Beyond his own projects, Alexandre works closely with{' '}
+              Beyond his own projects, Dano works closely with{' '}
               <strong>schools, universities, and companies</strong> — guiding emerging
               storytellers through every stage of production, from concept to colour grade.
             </motion.p>
