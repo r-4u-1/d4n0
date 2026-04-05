@@ -10,7 +10,7 @@ test.describe('Hero', () => {
   })
 
   test('director name is displayed', async ({ page }) => {
-    await expect(page.getByRole('heading', { level: 1 })).toContainText('Alexandre')
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Dano')
   })
 
   test('View Projects CTA scrolls to projects', async ({ page }) => {

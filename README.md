@@ -114,5 +114,5 @@ document.documentElement.setAttribute('data-theme', 'light')
 2. **Images** — replace `src` URLs in `src/data/index.ts`
 3. **Showreel** — add Vimeo/YouTube embed in `Showreel.tsx` modal
 4. **Press kit** — add `public/press-kit.pdf`
-5. **Contact email** — update `alexandre@noir.studio` in `Contact.tsx`
+5. **Contact email** — update `Dano@B.studio` in `Contact.tsx`
 6. **Social links** — update `href` values in `Contact.tsx` and `Footer.tsx`

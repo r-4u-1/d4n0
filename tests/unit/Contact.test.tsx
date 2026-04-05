@@ -65,7 +65,7 @@ describe('Contact', () => {
 
   it('shows success state after valid submission', async () => {
     renderContact()
-    await userEvent.type(screen.getByLabelText(/^name/i), 'Alexandre')
+    await userEvent.type(screen.getByLabelText(/^name/i), 'Dano')
     await userEvent.type(screen.getByLabelText(/^email/i), 'test@example.com')
     await userEvent.type(screen.getByLabelText(/^message/i), 'I would love to collaborate on a film project.')
     fireEvent.click(screen.getByRole('button', { name: /send message/i }))
@@ -76,7 +76,7 @@ describe('Contact', () => {
 
   it('disables submit button while submitting', async () => {
     renderContact()
-    await userEvent.type(screen.getByLabelText(/^name/i), 'Alexandre')
+    await userEvent.type(screen.getByLabelText(/^name/i), 'Dano')
     await userEvent.type(screen.getByLabelText(/^email/i), 'test@example.com')
     await userEvent.type(screen.getByLabelText(/^message/i), 'A valid message here.')
     fireEvent.click(screen.getByRole('button', { name: /send message/i }))
@@ -102,7 +102,7 @@ describe('Contact', () => {
 
   it('renders contact details', () => {
     renderContact()
-    expect(screen.getByText(/alexandre@noir\.studio/i)).toBeInTheDocument()
+    expect(screen.getByText(/Dano@B\.studio/i)).toBeInTheDocument()
     expect(screen.getByText(/stockholm/i)).toBeInTheDocument()
   })
 

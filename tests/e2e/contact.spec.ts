@@ -23,7 +23,7 @@ test.describe('Contact form', () => {
   })
 
   test('submits successfully with valid data', async ({ page }) => {
-    await page.getByLabel(/^name/i).fill('Alexandre')
+    await page.getByLabel(/^name/i).fill('Dano')
     await page.getByLabel(/^email/i).fill('test@example.com')
     await page.getByLabel(/^subject/i).selectOption('Narrative Film')
     await page.getByLabel(/^message/i).fill('I would love to collaborate on a narrative film project together.')

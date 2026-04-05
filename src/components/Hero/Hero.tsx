@@ -92,9 +92,9 @@ export function Hero() {
         </motion.p>
 
         <motion.h1 className={styles.title} variants={heroItem}>
-          Alexandre
+          Dano
           <br />
-          <span className={styles.titleAccent}>Noir</span>
+          <span className={styles.titleAccent}>B</span>
         </motion.h1>
 
         <motion.p className={styles.tagline} variants={heroItem}>
