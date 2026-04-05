@@ -13,7 +13,7 @@ function renderNav() {
 describe('Nav', () => {
   it('renders the logo', () => {
     renderNav()
-    expect(screen.getByLabelText(/Daniel/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/DANO/i)).toBeInTheDocument()
   })
 
   it('renders all nav links', () => {
