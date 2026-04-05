@@ -13,7 +13,7 @@ function renderNav() {
 describe('Nav', () => {
   it('renders the logo', () => {
     renderNav()
-    expect(screen.getByLabelText(/DANO/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/back to top/i)).toBeInTheDocument()
   })
 
   it('renders all nav links', () => {
