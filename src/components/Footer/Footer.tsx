@@ -10,17 +10,26 @@ export function Footer() {
 
   return (
     <footer className={styles.footer} role="contentinfo">
+      {/* Big cinematic name */}
+      <div className={styles.bigName} aria-hidden="true">
+        <span className={styles.bigNameText}>DANO</span>
+        <span className={styles.bigNameDot}>·</span>
+        <span className={styles.bigNameB}>B</span>
+      </div>
+
       <div className="container">
         <motion.div
-          className={styles.top}
+          className={styles.inner}
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
         >
-          <div>
-            <p className={styles.logo}>Daniel</p>
-            <p className={styles.tagline}>"Stories that move. Worlds that breathe."</p>
+          <div className={styles.left}>
+            <p className={styles.tagline}>
+              "Stories that move. Worlds that breathe."
+            </p>
+            <p className={styles.location}>Stockholm, Sweden · Available worldwide</p>
           </div>
 
           <div className={styles.cols}>
@@ -31,7 +40,7 @@ export function Footer() {
                   <a
                     key={link.href}
                     href={link.href}
-                    className={styles.colItem}
+                    className={styles.colLink}
                     onClick={e => { e.preventDefault(); scrollTo(link.href) }}
                   >
                     {link.label}
@@ -42,7 +51,25 @@ export function Footer() {
             <div className={styles.col}>
               <p className={styles.colTitle}>Work</p>
               {['Narrative Film', 'School Docs', 'Corporate', 'Press Kit'].map(item => (
-                <span key={item} className={styles.colItem}>{item}</span>
+                <span key={item} className={styles.colLink}>{item}</span>
+              ))}
+            </div>
+            <div className={styles.col}>
+              <p className={styles.colTitle}>Connect</p>
+              {[
+                { name: 'Instagram', href: '#' },
+                { name: 'Vimeo', href: '#' },
+                { name: 'IMDb', href: '#' },
+                { name: 'LinkedIn', href: '#' },
+              ].map(s => (
+                <a
+                  key={s.name}
+                  href={s.href}
+                  className={styles.colLink}
+                  aria-label={`Visit ${s.name} profile`}
+                >
+                  {s.name}
+                </a>
               ))}
             </div>
           </div>
@@ -50,7 +77,7 @@ export function Footer() {
 
         <div className={styles.bottom}>
           <p className={styles.copy}>
-            © {new Date().getFullYear()} Daniel · Stockholm · All rights reserved
+            © {new Date().getFullYear()} Dano B · Stockholm · All rights reserved
           </p>
           <nav className={styles.social} aria-label="Social media links">
             {[
@@ -62,7 +89,7 @@ export function Footer() {
                 key={s.name}
                 href={s.href}
                 className={styles.socialLink}
-                aria-label={`Visit ${s.name} profile (opens in new context)`}
+                aria-label={`Visit ${s.name}`}
               >
                 {s.name}
               </a>
