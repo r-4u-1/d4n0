@@ -64,7 +64,7 @@ export function About() {
           >
             <div className={styles.imageFrame}>
               <img
-                src="/d4n0.png"
+                src="d4n0.png"
                 alt="Daniel, film director — dramatic portrait with side lighting"
                 className={styles.image}
                 loading="lazy"
