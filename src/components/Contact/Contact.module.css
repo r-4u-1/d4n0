@@ -1,6 +1,6 @@
 .contact { background: var(--bg2); }
 
-.header { margin-bottom: 3rem; }
+.header { margin-bottom: 3.5rem; }
 
 .num {
   font-size: 10px;
@@ -12,7 +12,7 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2.75rem, 5.5vw, 4.5rem);
   letter-spacing: 0.05em;
   color: var(--text);
   line-height: 1;
@@ -22,53 +22,51 @@
 .sub {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--text-muted);
-  margin-top: 0.25rem;
+  margin-top: 0.3rem;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 3.5rem;
 }
 
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5.5rem;
     align-items: start;
   }
 }
 
-/* Info */
-.info { display: flex; flex-direction: column; gap: 2rem; }
+/* Info side */
+.info { display: flex; flex-direction: column; gap: 2.5rem; }
 
 .quote {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.15rem, 2.5vw, 1.6rem);
   color: var(--text);
-  line-height: 1.45;
+  line-height: 1.5;
+  border-left: 2px solid var(--violet);
+  padding-left: 1.25rem;
   transition: color var(--transition-theme);
 }
 
 .details {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem;
   font-style: normal;
 }
 
-.detail {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
+.detail { display: flex; flex-direction: column; gap: 5px; }
 
 .detailLabel {
-  font-size: 10px;
-  letter-spacing: 0.15em;
+  font-size: 9px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-faint);
 }
@@ -89,28 +87,29 @@
   transition: opacity var(--transition-base);
 }
 
-.detailLink:hover { opacity: 0.7; }
+.detailLink:hover { opacity: 0.65; }
 
 .social {
-  padding-top: 1.5rem;
+  padding-top: 1.75rem;
   border-top: 0.5px solid var(--border);
 }
 
 .socialLabel {
-  font-size: 10px;
-  letter-spacing: 0.15em;
+  font-size: 9px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
+  color: var(--text-faint);
+  margin-bottom: 1.1rem;
 }
 
 .socialLink {
   display: inline-block;
-  font-size: 11px;
-  letter-spacing: 0.05em;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--text-muted);
   text-decoration: none;
-  margin-right: 1.5rem;
+  margin-right: 1.75rem;
   transition: color var(--transition-base);
 }
 
@@ -122,13 +121,13 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .formRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 @media (max-width: 480px) {
@@ -138,76 +137,101 @@
 .field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .label {
-  font-size: 10px;
-  letter-spacing: 0.15em;
+  font-size: 9px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text-faint);
 }
 
 .input {
-  background: var(--card-bg);
-  border: 0.5px solid var(--border-md);
+  background: transparent;
+  border: none;
+  border-bottom: 0.5px solid var(--border-md);
   color: var(--text);
-  border-radius: var(--radius-sm);
-  padding: 10px 14px;
-  font-size: 13px;
+  padding: 10px 0;
+  font-size: 14px;
   font-family: var(--font-body);
-  transition: border-color var(--transition-base), background var(--transition-theme), color var(--transition-theme);
+  transition: border-color var(--transition-base), color var(--transition-theme);
   width: 100%;
   appearance: none;
   -webkit-appearance: none;
+  border-radius: 0;
 }
 
 .input::placeholder { color: var(--text-faint); }
-.input:focus { outline: none; border-color: var(--violet); }
-.inputError { border-color: var(--coral) !important; }
+
+.input:focus {
+  outline: none;
+  border-bottom-color: var(--violet);
+}
+
+.inputError { border-bottom-color: var(--coral) !important; }
 
 .textarea {
-  resize: vertical;
-  min-height: 120px;
+  resize: none;
+  min-height: 110px;
+  line-height: 1.7;
 }
 
 select.input {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 12px center;
-  padding-right: 32px;
+  background-position: right 0 center;
+  padding-right: 1.5rem;
   cursor: pointer;
 }
 
 .error {
-  font-size: 11px;
+  font-size: 10px;
   color: var(--coral);
   display: block;
+  letter-spacing: 0.04em;
 }
 
 .submit {
-  background: var(--violet);
-  color: #fff;
-  border: none;
+  position: relative;
+  background: transparent;
+  border: 0.5px solid var(--border-md);
+  color: var(--text);
   border-radius: var(--radius-sm);
-  padding: 14px;
-  font-size: 12px;
+  padding: 16px;
+  font-size: 11px;
   font-family: var(--font-body);
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: opacity var(--transition-base), transform var(--transition-base);
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
+  overflow: hidden;
+  transition: border-color var(--transition-base), color var(--transition-base),
+              transform var(--transition-base);
+}
+
+.submit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--mint);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-cinema);
+  z-index: -1;
 }
 
 .submit:hover:not(:disabled) {
-  opacity: 0.85;
+  border-color: var(--mint);
+  color: #080810;
   transform: translateY(-2px);
 }
 
+.submit:hover:not(:disabled)::before { transform: scaleX(1); }
+
 .submit:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
@@ -217,12 +241,11 @@ select.input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  padding: 4rem 2rem;
+  gap: 1.25rem;
+  padding: 5rem 2rem;
   text-align: center;
   border: 0.5px solid var(--border-md);
-  border-radius: var(--radius-md);
-  background: var(--card-bg);
+  border-radius: var(--radius-sm);
 }
 
 .successIcon {
@@ -232,8 +255,8 @@ select.input {
 
 .successTitle {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  letter-spacing: 0.05em;
+  font-size: 1.75rem;
+  letter-spacing: 0.06em;
   color: var(--text);
 }
 
@@ -241,5 +264,5 @@ select.input {
   font-size: 13px;
   color: var(--text-muted);
   max-width: 300px;
-  line-height: 1.7;
+  line-height: 1.75;
 }

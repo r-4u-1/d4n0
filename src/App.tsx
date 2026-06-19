@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@/context/ThemeContext'
+import { Cursor } from '@/components/Cursor/Cursor'
 import { Nav } from '@/components/Nav/Nav'
 import { Hero } from '@/components/Hero/Hero'
 import { Showreel } from '@/components/Showreel/Showreel'
@@ -13,11 +14,11 @@ import '@/styles/globals.css'
 export function App() {
   return (
     <ThemeProvider>
-      {/* Skip to main content for a11y */}
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
 
+      <Cursor />
       <Nav />
 
       <main id="main-content">

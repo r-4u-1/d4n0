@@ -3,21 +3,16 @@ import { slideInLeft, fadeUp, staggerContainer, viewportOnce } from '@/hooks/ani
 import styles from './About.module.css'
 
 const SERVICES = [
-  {
-    name: 'Narrative Film',
-    desc: 'Features, shorts & documentary storytelling',
-    accent: 'var(--mint)',
-  },
-  {
-    name: 'Education',
-    desc: 'School & university film productions',
-    accent: 'var(--violet)',
-  },
-  {
-    name: 'Corporate',
-    desc: 'Brand films & internal content',
-    accent: 'var(--coral)',
-  },
+  { name: 'Narrative Film', desc: 'Features, shorts & documentary storytelling', accent: 'var(--mint)' },
+  { name: 'Education',      desc: 'School & university film productions',          accent: 'var(--violet)' },
+  { name: 'Corporate',      desc: 'Brand films & internal content',               accent: 'var(--coral)' },
+]
+
+const STATS = [
+  { value: '14+', label: 'Years Active' },
+  { value: '8',   label: 'Features' },
+  { value: '3',   label: 'Countries' },
+  { value: '5+',  label: 'Awards Won' },
 ]
 
 export function About() {
@@ -41,6 +36,23 @@ export function About() {
           </motion.div>
         </div>
 
+        {/* Stats row */}
+        <motion.div
+          className={styles.stats}
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          aria-label="Career statistics"
+        >
+          {STATS.map(stat => (
+            <motion.div key={stat.label} className={styles.stat} variants={fadeUp}>
+              <span className={styles.statValue}>{stat.value}</span>
+              <span className={styles.statLabel}>{stat.label}</span>
+            </motion.div>
+          ))}
+        </motion.div>
+
         <div className={styles.grid}>
           {/* Portrait */}
           <motion.div
@@ -52,13 +64,13 @@ export function About() {
           >
             <div className={styles.imageFrame}>
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJMx7WSe1czuW_r8Jjv2PjVXTCVqCzPIGQEK-EkhCyNII0pbAJ1tRf-yBi9moxctbJevME-CjEiXzwlzOrFlxXUB_X_wbUSHD4rTKXg0gteR0mFjk2mgWX66eCJ6ljnE3_7ws0EPs8YwHSKRhiokNwR3h80l9LFMtEnEF-j2-Cbe9RcoHpAPZLEb5AmDDpTWCbIv7EHMxATRlZ5Avipy0uJtO7v_GOvUCFIxLkL0-xdmbohblD10SwU44FQhdU0btVfbl05j_OxE7C"
+                src="/d4n0.png"
                 alt="Daniel, film director — dramatic portrait with side lighting"
                 className={styles.image}
                 loading="lazy"
               />
               <div className={styles.imageAccent} aria-hidden="true" />
-              <div className={styles.imageBottomLine} aria-hidden="true" />
+              <div className={styles.imageGradient} aria-hidden="true" />
             </div>
           </motion.div>
 
@@ -90,22 +102,16 @@ export function About() {
               Every frame is a decision. Every cut, a consequence.
             </motion.p>
 
-            {/* Services */}
             <motion.div className={styles.services} variants={fadeUp} role="list">
               {SERVICES.map(s => (
                 <div key={s.name} className={styles.service} role="listitem">
-                  <div
-                    className={styles.serviceAccent}
-                    style={{ background: s.accent }}
-                    aria-hidden="true"
-                  />
+                  <div className={styles.serviceAccent} style={{ background: s.accent }} aria-hidden="true" />
                   <p className={styles.serviceName}>{s.name}</p>
                   <p className={styles.serviceDesc}>{s.desc}</p>
                 </div>
               ))}
             </motion.div>
 
-            {/* Press kit */}
             <motion.div variants={fadeUp}>
               <a
                 href="/press-kit.pdf"
