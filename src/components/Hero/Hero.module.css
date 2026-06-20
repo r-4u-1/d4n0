@@ -6,59 +6,30 @@
   align-items: flex-end;
   padding: 4rem clamp(1.5rem, 5vw, 4.5rem);
   overflow: hidden;
-  background: var(--bg);
+  background: #0D1117;
 }
 
-/* Cinematic letterbox bars */
-.letterboxTop,
-.letterboxBottom {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: #000;
-  z-index: 10;
-}
-.letterboxTop { top: 0; }
-.letterboxBottom { bottom: 0; }
-
-/* Parallax panels */
-.panels {
+/* Particle canvas */
+.particleCanvas {
   position: absolute;
   inset: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5px;
-  opacity: 0.5;
-}
-
-.panel { overflow: hidden; }
-
-.panelImg {
   width: 100%;
-  height: 118%;
-  object-fit: cover;
-  display: block;
+  height: 100%;
 }
 
-/* Gradient overlay */
+/* Gradient overlay — bottom fade for CTA legibility */
 .overlay {
   position: absolute;
   inset: 0;
   background:
     linear-gradient(
       to top,
-      color-mix(in srgb, var(--bg) 97%, transparent) 0%,
-      color-mix(in srgb, var(--bg) 50%, transparent) 45%,
-      color-mix(in srgb, var(--bg) 12%, transparent) 75%,
+      rgba(13, 17, 23, 0.95) 0%,
+      rgba(13, 17, 23, 0.5) 30%,
+      rgba(13, 17, 23, 0.1) 55%,
       transparent 100%
-    ),
-    linear-gradient(
-      to right,
-      color-mix(in srgb, var(--bg) 60%, transparent) 0%,
-      transparent 55%
     );
-  transition: background var(--transition-theme);
+  pointer-events: none;
 }
 
 /* Anamorphic lens flare — horizontal light streak */
@@ -71,10 +42,10 @@
   background: linear-gradient(
     to right,
     transparent 0%,
-    rgba(0, 255, 178, 0.08) 15%,
-    rgba(0, 255, 178, 0.22) 40%,
-    rgba(191, 95, 255, 0.18) 60%,
-    rgba(0, 255, 178, 0.08) 85%,
+    rgba(0, 255, 178, 0.06) 15%,
+    rgba(0, 255, 178, 0.16) 40%,
+    rgba(191, 95, 255, 0.12) 60%,
+    rgba(0, 255, 178, 0.06) 85%,
     transparent 100%
   );
   filter: blur(0.8px);
@@ -119,66 +90,6 @@
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50%       { opacity: 0.4; transform: scale(0.7); }
-}
-
-/* Title */
-.titleWrap {
-  display: flex;
-  flex-direction: column;
-  line-height: 0.84;
-  margin-bottom: 1.5rem;
-}
-
-.title {
-  font-family: var(--font-display);
-  font-size: clamp(5.5rem, 14vw, 11rem);
-  letter-spacing: 0.04em;
-  color: var(--text);
-  transition: color var(--transition-theme);
-}
-
-.titleLineWrap {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.titleAccent {
-  font-family: var(--font-display);
-  font-size: clamp(5.5rem, 14vw, 11rem);
-  letter-spacing: 0.04em;
-  -webkit-text-stroke: 1.5px var(--text);
-  color: transparent;
-  transition: -webkit-text-stroke var(--transition-theme);
-}
-
-.titleRule {
-  flex: 1;
-  height: 1.5px;
-  max-width: 200px;
-  background: linear-gradient(to right, var(--text-muted), transparent);
-  opacity: 0.35;
-}
-
-/* Tagline */
-.tagline {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(1.2rem, 2.4vw, 1.75rem);
-  font-weight: 300;
-  color: var(--violet);
-  margin-bottom: 1.25rem;
-  transition: color var(--transition-theme);
-}
-
-/* Desc */
-.desc {
-  font-size: 13px;
-  line-height: 1.8;
-  color: var(--text-muted);
-  max-width: 420px;
-  margin-bottom: 2.25rem;
-  transition: color var(--transition-theme);
 }
 
 /* CTAs */
@@ -330,5 +241,4 @@
 /* Mobile */
 @media (max-width: 480px) {
   .timecode { display: none; }
-  .titleRule { display: none; }
 }
